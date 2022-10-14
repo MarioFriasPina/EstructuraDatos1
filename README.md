@@ -1,3 +1,7 @@
+## Uso
+make re
+./structures
+
 # Evidencia 1: Estructuras de datos en C
 ## Creacion y uso de de una lista circular
 Implementar en lenguaje C una lista circular doblemente ligada con las herramientas aprendidas en clase para manejo de memoria dinámica.
