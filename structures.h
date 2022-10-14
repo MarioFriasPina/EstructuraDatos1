@@ -60,11 +60,12 @@ void		printCircular(t_circular *lst);
 void		freeCircular(t_circular *lst);
 
 //Priority queue functions
-int			emptyQueue(t_pqueue *queue);
-void		enqueue(t_pqueue *queue, int value, int priority);
-int			dequeue(t_pqueue *queue);
-t_pqueue	*initQueue(void);
-void		freeQueue(t_pqueue *queue);
-void		printQueue(t_pqueue *queue);
+int			emptyPqueue(t_pqueue *queue);
+void		enPqueue(t_pqueue *queue, int value, int priority);
+int			dePqueue(t_pqueue *queue);
+t_pqueue	*initPqueue(void);
+void		freePqueue(t_pqueue *queue);
+void		printPqueue(t_pqueue *queue);
+void		printPriorityQueue(t_pqueue *queue);
 
 #endif

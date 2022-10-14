@@ -1,7 +1,7 @@
 #include "structures.h"
 
 //Returns 1 if the queue is empty, 0 if it has elements
-int		emptyQueue(t_pqueue *queue)
+int		emptyPqueue(t_pqueue *queue)
 {
 	if (queue->first)
 		return (0);
@@ -10,7 +10,7 @@ int		emptyQueue(t_pqueue *queue)
 }
 
 //Adds a new node to the queue. 
-void	enqueue(t_pqueue *queue, int value, int priority)
+void	enPqueue(t_pqueue *queue, int value, int priority)
 {
 	t_node *curr, *temp;
 	t_node *node = (t_node *)malloc(sizeof(t_node));
@@ -23,7 +23,7 @@ void	enqueue(t_pqueue *queue, int value, int priority)
 	node->value = value;
 	node->next = NULL;
 	node->priority = priority;
-	if (emptyQueue(queue))
+	if (emptyPqueue(queue))
 	{
 		queue->first = node;
 		queue->last = node;
@@ -48,11 +48,11 @@ void	enqueue(t_pqueue *queue, int value, int priority)
 }
 
 //Removes the first value from the queue.
-int		dequeue(t_pqueue *queue)
+int		dePqueue(t_pqueue *queue)
 {
 	t_node *first;
 
-	if (emptyQueue(queue))
+	if (emptyPqueue(queue))
 		return (0);
 	first = queue->first;
 	if (queue->first == queue->last)
@@ -64,7 +64,7 @@ int		dequeue(t_pqueue *queue)
 }
 
 //Initiates a new Queue
-t_pqueue	*initQueue(void)
+t_pqueue	*initPqueue(void)
 {
 	t_pqueue *new;
 
@@ -75,15 +75,15 @@ t_pqueue	*initQueue(void)
 }
 
 //Frees the memory of the queue.
-void	freeQueue(t_pqueue *queue)
+void	freePqueue(t_pqueue *queue)
 {
-	while (!dequeue(queue));
+	while (!dePqueue(queue));
 	free(queue);
 	queue = NULL;
 }
 
 //Prints the queue with a tab between the values.
-void	printQueue(t_pqueue *queue)
+void	printPqueue(t_pqueue *queue)
 {
 	t_node *curr;
 
@@ -91,6 +91,20 @@ void	printQueue(t_pqueue *queue)
 	while (curr)
 	{
 		printf("%d\t", curr->value);
+		curr = curr->next;
+	}
+	printf("\n");
+}
+
+//Prints the queue with their respective priority.
+void	printPriorityQueue(t_pqueue *queue)
+{
+	t_node	*curr;
+
+	curr = queue->first;
+	while (curr)
+	{
+		printf("%d-%d ", curr->value, curr->priority);
 		curr = curr->next;
 	}
 	printf("\n");
