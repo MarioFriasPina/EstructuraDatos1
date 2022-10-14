@@ -1,5 +1,6 @@
 ## Uso
 make re
+
 ./structures
 
 # Evidencia 1: Estructuras de datos en C
