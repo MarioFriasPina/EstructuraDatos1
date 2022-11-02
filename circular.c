@@ -75,6 +75,8 @@ void	addfirstCircular(t_circular *lst, int value)
 		lst->last = new;
 	else
 		lst->first->past = new;
+
+	new->next = lst->first;
 	lst->first = new;
 	lst->last->next = lst->first;
 	lst->first->past = lst->last;

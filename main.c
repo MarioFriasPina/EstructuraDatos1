@@ -14,10 +14,11 @@ int main(void)
 	printPriorityQueue(q);
 
 	list = initCircular();
+	addfirstCircular(list, 15);
 	addCircular(list, 12);
-	addCircular(list, 15);
 	addCircular(list, 11);
 	addCircular(list, 19);
+	addfirstCircular(list, 13);
 	printCircular(list);
 	freePqueue(q);
 	freeCircular(list);
