@@ -14,6 +14,7 @@
 # define MAG	"\x1B[35m"
 # define CYN	"\x1B[36m"
 # define WHT	"\x1B[37m"
+# define BAK	"\x1B[30m"
 # define END	"\x1B[0m"
 
 //Double linked list nodes
@@ -50,10 +51,12 @@ typedef struct		s_pqueue
 int			emptyCircular(t_circular *lst);
 t_circular	*initCircular(void);
 int			sizeCircular(t_circular *lst);
-void		addCircular(t_circular *lst, int value);
+void		addlastCircular(t_circular *lst, int value);
 void		addfirstCircular(t_circular *lst, int value);
+void		addMiddleCircular(t_circular *lst, int value);
+void		addMultipleCircular(t_circular *lst);
 int			searchCircular(t_circular *lst, int value);
-double		avgCircular(t_circular *lst);
+void		avgCircular(t_circular *lst);
 void		delCircular(t_circular *lst, int value);
 void		delallCircular(t_circular *lst, int value);
 void		printCircular(t_circular *lst);
@@ -62,10 +65,12 @@ void		freeCircular(t_circular *lst);
 //Priority queue functions
 int			emptyPqueue(t_pqueue *queue);
 void		enPqueue(t_pqueue *queue, int value, int priority);
+void    	addMultiplePqueue(t_pqueue *queue);
 int			dePqueue(t_pqueue *queue);
 t_pqueue	*initPqueue(void);
 void		freePqueue(t_pqueue *queue);
-void		printPqueue(t_pqueue *queue);
 void		printPriorityQueue(t_pqueue *queue);
+void		searchNodePqueue(t_pqueue *queue, int value);
+int			sizePqueue(t_pqueue *queue);
 
 #endif
