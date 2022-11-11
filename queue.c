@@ -42,14 +42,14 @@ void	enPqueue(t_pqueue *queue, int value, int priority)
 //Function 2 add multiple consecutive nodes
 void    addMultiplePqueue(t_pqueue *queue){
     short int counter, value,priority, i;
-    printf("\n%sHow many nodes you want to add? %s", MAG, END);
-    scanf("%hd",&counter);
+    printf("\n%sHow many nodes you want to add? %s\n", MAG, END);
+	scanf("%hd",&counter);
+	printf("%s\nWhat is the priority of all nodes: %s", BAK, END);
+    scanf("%hd",&priority);
     for (i = 0; i < counter; ++i)
     {
         printf("%sWhat is the value of the node %hd: %s", BAK, i+1, END);
         scanf("%hd",&value);
-		printf("%sWhat is the priority of the node %hd: %s", BAK, i+1, END);
-        scanf("%hd",&priority);
         enPqueue(queue,value,priority);
 	}   
 }
